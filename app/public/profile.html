@@ -44,30 +44,30 @@
             </div>
         </nav>
         <main class="row">
-            <h3 class="heading">What defines me?</h3>
-            
-            <div class="bg-info col-lg-4 col-md-4 col-sm-12">
-                <h2>Happiness</h2>
-                <a target="_blank" href="img/happy.png">
-                    <img src="img/happy.png" title="https://www.iconfinder.com/icons/1431524/emoji_emoticon_face_happiness_true_icon" height="90px" /><br>
+            <h3 class="heading">Profile</h3>
+            <div id="randomPeopleApp">
+            <div v-for="person in people" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <a target="_blank" v-bind:href="person.picture.large">
+                    <img v-bind:src="person.picture.large" title="https://randomuser.me" height="150px" /><br />
                 </a>
-                <cite class="citation">https://www.iconfinder.com/icons/1431524/emoji_emoticon_face_happiness_true_icon</cite>
+                <cite class="citation">https://randomuser.me</cite>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <h2>Confidence</h2>
-                <a target="_blank" href="img/confidence.png">
-                    <img src="img/confidence.png" title="https://www.flaticon.com/premium-icon/confident_1134201" height="90px" /><br>
-                </a>
-                <cite class="citation">https://www.flaticon.com/premium-icon/confident_1134201</cite>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <p v-for="person in people">
+                    Name: {{person.name.first}}&nbsp;{{person.name.last}}  <br />
+                    Country : {{person.nat}} <br/>
+                    Birthdate : {{person.dob.date}} <br />
+                    Age : {{person.dob.age}} <br />
+                    Email address : <a href="mailto:gail.johnston93@example.com">{{person.email}}</a>
+                </p>
             </div>
-            <div class="bg-info col-lg-4 col-md-4 col-sm-6">
-                <h2>Empathy</h2>
-                <a target="_blank" href="img/empathy.png">
-                    <img src="img/empathy.png" title="https://www.flaticon.com/free-icon/empathy_860461" height="90px" /><br>
-                </a>
-                <cite class="citation">https://www.flaticon.com/free-icon/empathy_860461</cite>
+            <form v-on:submit="fetchPeople">
+                <button type="submit" class="btn btn-primary">Refresh</button>
+            </form>
             </div>
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/randomPeople.js"></script>
 </body>  
 </html>

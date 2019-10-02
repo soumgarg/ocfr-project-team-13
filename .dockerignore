@@ -1,1 +1,4 @@
-app/vendor/
+.*
+docker-compose.yml
+*.md
+!README.md

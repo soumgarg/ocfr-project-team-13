@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel=stylesheet href="css/style.css" />
+    <!--Compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <!--Compiled and minified JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- Adding javascript file for table sorting -->
+    <script src="js/tablesort.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Gail Johnston</title> 
+</head> 
+<body>
+    <div class="container">
+        
+        <header class="row">
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <a target="_blank" href="img/girl.png">
+                    <img src="img/girl.png" title="https://www.google.com" height="90px" />
+                </a>
+            </div>
+        </header>
+        
+        <nav class="row navbar navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">About Me</a></li>
+                    <li><a href="table.html">Books</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main class="row">
+            <h3 class="heading">Books</h3>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">    
+        <table id="bookTable" class="table table-striped table-hover table-condensed table-bordered" >
+        <thead id="tableHeader">
+            <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
+                <th id="theader" onclick="sortTable(0)">Title <i class="down"></i></th> 
+                <th id="theader" onclick="sortTable(1)">Author(s) <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(2)">Year <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(3)">Publisher <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(4)">Page count <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(5)">MSRP (in $) <i class="down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ellie and the Harpmaker</td>
+                <td>Hazel Prior</td>
+                <td>2019</td>
+                <td>Penguin Random House</td>
+                <td>336</td>
+                <td>78</td>
+            </tr>
+            <tr>
+                <td>The Overstory</td>
+                <td>Richard Powers</td>
+                <td>2018</td>
+                <td>Springer Nature</td>
+                <td>512</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>The Guest Book</td>
+                <td>Sarah Blake</td>
+                <td>2019</td>
+                <td>HarperCollins</td>
+                <td>448</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>The Dearly Beloved</td>
+                <td>Cara Wall</td>
+                <td>2019</td>
+                <td>Cengage</td>
+                <td>352</td>
+                <td>88</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> 
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter title">
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" id="author" placeholder="Author">
+          </div>
+          <div class="form-group">
+            <label for="yearPublished">Year Published</label>
+            <input type="month" class="form-control" id="yearPublished" placeholder="Enter month and year">
+          </div>
+          <div class="form-group">
+            <label for="publisher">Publisher</label>
+            <input type="text" class="form-control" id="publisher" placeholder="Publisher">
+          </div>
+          <div class="form-group">
+            <label for="pageCount">Page Count</label>
+            <input type="number" class="form-control" id="pageCount" placeholder="Page Count">
+          </div>
+            <div class="form-group">
+            <label for="msrp">MSPR</label>
+            <input type="number" class="form-control" id="msrp" placeholder="MSRP">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+        </main>
+    </div>
+</body>  
+</html>
