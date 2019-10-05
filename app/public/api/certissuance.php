@@ -1,121 +1,121 @@
 [{
   "issuanceid": 1,
-  "issueStartDate": "3/1/2007",
-  "issueEndDate": "3/1/2008",
+  "issueStartDate": "5/1/2019",
+  "issueEndDate": "5/1/2020",
   "memberID": 1,
   "certID": 5
 }, {
   "issuanceid": 2,
-  "issueStartDate": "9/8/2006",
-  "issueEndDate": "9/8/2008",
-  "memberID": 5,
+  "issueStartDate": "8/1/2019",
+  "issueEndDate": "8/1/2021",
+  "memberID": 1,
   "certID": 3
 }, {
   "issuanceid": 3,
-  "issueStartDate": "8/12/1988",
-  "issueEndDate": "8/12/1989",
-  "memberID": 2,
-  "certID": 5
+  "issueStartDate": "7/1/2019",
+  "issueEndDate": "7/1/2020",
+  "memberID": 1,
+  "certID": 4
 }, {
   "issuanceid": 4,
-  "issueStartDate": "3/29/1995",
-  "issueEndDate": "3/29/1996",
-  "memberID": 5,
-  "certID": 5
+  "issueStartDate": "6/1/2015",
+  "issueEndDate": "6/1/2016",
+  "memberID": 1,
+  "certID": 1
 }, {
   "issuanceid": 5,
-  "issueStartDate": "8/2/2002",
-  "issueEndDate": "8/2/2004",
+  "issueStartDate": "9/1/2019",
+  "issueEndDate": "9/1/2021",
   "memberID": 2,
   "certID": 3
 }, {
   "issuanceid": 6,
-  "issueStartDate": "10/3/2006",
-  "issueEndDate": "10/3/2008",
-  "memberID": 5,
+  "issueStartDate": "2/1/2019",
+  "issueEndDate": "2/1/2021",
+  "memberID": 2,
   "certID": 1
 }, {
   "issuanceid": 7,
-  "issueStartDate": "11/4/1987",
-  "issueEndDate": "11/4/1988",
-  "memberID": 3,
+  "issueStartDate": "3/1/2019",
+  "issueEndDate": "3/1/2020",
+  "memberID": 2,
   "certID": 5
 }, {
   "issuanceid": 8,
-  "issueStartDate": "11/5/2012",
-  "issueEndDate": "11/5/2013",
-  "memberID": 5,
+  "issueStartDate": "7/1/2011",
+  "issueEndDate": "7/1/2012",
+  "memberID": 2,
   "certID": 2
 }, {
   "issuanceid": 9,
-  "issueStartDate": "5/29/1987",
-  "issueEndDate": "5/29/1989",
-  "memberID": 5,
+  "issueStartDate": "3/1/2019",
+  "issueEndDate": "3/1/2021",
+  "memberID": 3,
   "certID": 3
 }, {
   "issuanceid": 10,
-  "issueStartDate": "4/17/2015",
-  "issueEndDate": "4/17/2017",
-  "memberID": 1,
-  "certID": 3
+  "issueStartDate": "5/1/2019",
+  "issueEndDate": "5/1/2021",
+  "memberID": 3,
+  "certID": 4
 }, {
   "issuanceid": 11,
-  "issueStartDate": "9/10/1995",
-  "issueEndDate": "9/10/1996",
-  "memberID": 5,
+  "issueStartDate": "6/1/2019",
+  "issueEndDate": "6/1/2020",
+  "memberID": 3,
   "certID": 5
 }, {
   "issuanceid": 12,
-  "issueStartDate": "6/26/2013",
-  "issueEndDate": "6/26/2015",
-  "memberID": 2,
+  "issueStartDate": "9/1/2016",
+  "issueEndDate": "9/1/2018",
+  "memberID": 3,
   "certID": 1
 }, {
   "issuanceid": 13,
-  "issueStartDate": "7/26/1988",
-  "issueEndDate": "7/26/1990",
-  "memberID": 2,
+  "issueStartDate": "6/1/2019",
+  "issueEndDate": "6/1/2021",
+  "memberID": 4,
   "certID": 1
 }, {
   "issuanceid": 14,
-  "issueStartDate": "8/15/2007",
-  "issueEndDate": "8/15/2009",
-  "memberID": 1,
-  "certID": 1
+  "issueStartDate": "7/1/2019",
+  "issueEndDate": "7/1/2021",
+  "memberID": 4,
+  "certID": 2
 }, {
   "issuanceid": 15,
-  "issueStartDate": "8/3/2016",
-  "issueEndDate": "8/3/2018",
+  "issueStartDate": "1/1/2019",
+  "issueEndDate": "1/1/2021",
   "memberID": 4,
   "certID": 4
 }, {
   "issuanceid": 16,
-  "issueStartDate": "12/13/2008",
-  "issueEndDate": "12/13/2009",
-  "memberID": 5,
+  "issueStartDate": "2/1/2013",
+  "issueEndDate": "2/1/2014",
+  "memberID": 4,
   "certID": 5
 }, {
   "issuanceid": 17,
-  "issueStartDate": "2/28/2005",
-  "issueEndDate": "2/28/2007",
-  "memberID": 2,
+  "issueStartDate": "3/1/2019",
+  "issueEndDate": "3/1/2021",
+  "memberID": 5,
   "certID": 3
 }, {
   "issuanceid": 18,
-  "issueStartDate": "7/21/2019",
-  "issueEndDate": "7/21/2020",
+  "issueStartDate": "4/1/2019",
+  "issueEndDate": "4/1/2020",
   "memberID": 5,
-  "certID": 2
+  "certID": 1
 }, {
   "issuanceid": 19,
-  "issueStartDate": "7/27/2010",
-  "issueEndDate": "7/27/2011",
-  "memberID": 1,
+  "issueStartDate": "4/1/2019",
+  "issueEndDate": "4/1/2020",
+  "memberID": 5,
   "certID": 5
 }, {
   "issuanceid": 20,
-  "issueStartDate": "9/7/2018",
-  "issueEndDate": "9/7/2019",
-  "memberID": 3,
+  "issueStartDate": "3/1/2014",
+  "issueEndDate": "3/1/2015",
+  "memberID": 5,
   "certID": 2
 }]
