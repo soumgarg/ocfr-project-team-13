@@ -44,35 +44,27 @@
             </div>
         </nav>
         <main class="row">
-            <h3 class="heading">Member List</h3>
+            <h3 class="heading">Certificate List</h3>
             
             <div class="col-lg-12 col-md-12 col-sm-12">
-               <table id="memberList" class="table table-sm table-hover">
+               <table id="certificateList" class="table table-sm table-hover">
                   <thead>
                     <tr>
-                        <th scope="col">Member ID</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Radio Number</th>
-                        <th scope="col">Station Number</th>
-                        <th scope="col">Active</th>
-                        <th scope="col">Gender</th>
-                        <th scope="col">Position</th>
+                        <th scope="col">Certificate ID</th>
+                        <th scope="col">Certificate Agency</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Expiry</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
-                      <tr v-for="m in members">
-                        <td>{{ m.memberid }}</td>
-                        <td>{{ m.firstName }}</td>
-                        <td>{{ m.lastName }}</td>
-                        <td>{{ m.radioNumber }}</td>
-                        <td>{{ m.stationNumber }}</td>
-                          <td>{{ m.isActive }}</td>
-                          <td>{{ m.gender }}</td>
-                          <td>{{ m.position }}</td>
-                          <td><a href="addMember.html"><button type="submit" name="Edit">Edit</button></a> </td>
+                      <tr v-for="c in certificates">
+                        <td>{{ c.certid }}</td>
+                        <td>{{ c.certAgency }}</td>
+                        <td>{{ c.certName }}</td>
+                        <td>{{ c.expirationYears }}</td>
+                          <td><a href="addCertificate.html"><button type="submit" name="Edit">Edit</button></a></td>
                           <td><button type="submit" name="Delete">Delete</button> </td>
                       </tr>
                     </tbody>
@@ -85,10 +77,10 @@
                 </a>
                 <cite class="citation">https://www.flaticon.com/free-icon/empathy_860461</cite>
             </div>-->
-            <a href="addMember.html"><button type="submit" name="Add">Add New Member</button></a>
+            <a href="addCertificate.html"><button type="submit" name="Add">Add New Certificate</button></a>
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/memberExtract.js"></script>
+    <script src="js/certificateExtract.js"></script>
 </body>  
 </html>
