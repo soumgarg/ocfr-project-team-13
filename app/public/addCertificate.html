@@ -47,7 +47,7 @@
             <h3 class="heading">Add New Certificate</h3>
 
             <div class="col-lg-6 col-md-6 col-sm-6">
-               <form>
+               <form @submit.prevent="handleSubmit">
                    <div class="form-group">
                     <label for="certAgency">Certificate Agency</label>
                     <input type="text" class="form-control" id="certAgency" placeholder="Enter the certificate agency">
@@ -55,10 +55,6 @@
                    <div class="form-group">
                     <label for="certName">Certificate Name</label>
                     <input type="text" class="form-control" id="certName" placeholder="Enter certificate name">
-                  </div>
-                    <div class="form-group">
-                    <label for="startDate">Valid from</label>
-                    <input type="number" class="form-control" id="startDate" placeholder="Enter date certificate is valid from">
                   </div>
                    <div class="form-group">
                     <label for="expirationYears">Expiry years</label>
