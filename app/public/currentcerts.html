@@ -10,6 +10,9 @@
 
     <!--Compiled and minified JavaScript-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Adding javascript file for table sorting -->
+    <script src="js/tablesort.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 
@@ -50,30 +53,36 @@
             </div>
         </nav>
         <main class="row">
-            <h3 class="heading">What defines me?</h3>
 
-            <div class="bg-info col-lg-4 col-md-4 col-sm-12">
-                <h2>Happiness</h2>
-                <a target="_blank" href="img/happy.png">
-                    <img src="img/happy.png" title="https://www.iconfinder.com/icons/1431524/emoji_emoticon_face_happiness_true_icon" height="90px" /><br>
-                </a>
-                <cite class="citation">https://www.iconfinder.com/icons/1431524/emoji_emoticon_face_happiness_true_icon</cite>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <h2>Confidence</h2>
-                <a target="_blank" href="img/confidence.png">
-                    <img src="img/confidence.png" title="https://www.flaticon.com/premium-icon/confident_1134201" height="90px" /><br>
-                </a>
-                <cite class="citation">https://www.flaticon.com/premium-icon/confident_1134201</cite>
-            </div>
-            <div class="bg-info col-lg-4 col-md-4 col-sm-6">
-                <h2>Empathy</h2>
-                <a target="_blank" href="img/empathy.png">
-                    <img src="img/empathy.png" title="https://www.flaticon.com/free-icon/empathy_860461" height="90px" /><br>
-                </a>
-                <cite class="citation">https://www.flaticon.com/free-icon/empathy_860461</cite>
-            </div>
+
+      <select id="#certificateList">
+        <option value=" ">{{ certName }}</option>
+      </select>
+
+    <h3 class="heading">Certificates (Current)</h3>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <table id="bookTable" class="table table-striped table-hover table-condensed table-bordered" >
+    <thead id="tableHeader">
+        <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
+            <th id="theader" onclick="sortTable(0)">First Name <i class="down"></i></th>
+            <th id="theader" onclick="sortTable(1)">Last Name <i class="down"></i></th>
+            <th id="theader" onclick="sortTable(1)">Gender <i class="down"></i></th>
+        </tr>
+    </thead>
+    <tbody id="memberList">
+        <tr v-for="m in members">
+            <td>{{ m.firstName }}</td>
+            <td>{{ m.lastName }}</td>
+            <td>{{ m.gender }}</td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/memberExtract.js"></script>
+    <script src="js/certificateExtract.js"></script>
 </body>
 </html>
