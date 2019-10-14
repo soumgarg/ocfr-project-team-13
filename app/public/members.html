@@ -51,9 +51,65 @@
         </nav>
         <main class="row">
             <h3 class="heading">Member List</h3>
-
+            <div id="mainContent" class="col-md">
+            <div id="memberList">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+               <form @submit.prevent="handleSubmit">
+                   <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" v-model="recordMember.firstName">
+                  </div>
+                   <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" v-model="recordMember.lastName">
+                  </div>
+                   <div class="form-group">
+                    <label for="radioNumber">Radio Number</label>
+                    <input type="text" class="form-control" id="radioNumber" placeholder="Enter radio number" v-model="recordMember.radioNumber">
+                    </div>
+                   <div class="form-group">
+                    <label for="stationNumber">Station Number</label>
+                    <input type="number" class="form-control" id="stationNumber" placeholder="Enter station Number" v-model="recordMember.stationNumber">
+                  </div>
+                   <div class="form-group">
+                    <label for="isActive">Active</label>
+                       <select>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                       </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter address" v-model="recordMember.address">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="password" class="form-control" id="email" placeholder="Enter Email" v-model="recordMember.email">
+                  </div>
+                   <div class="form-group">
+                    <label for="phoneNumber">Phone number</label>
+                    <input type="number" class="form-control" id="phoneNumber" placeholder="Enter phone number" v-model="recordMember.phoneNumber">
+                  </div>
+                   <div class="form-group">
+                    <label for="dob">Date of birth</label>
+                    <input type="date" class="form-control" id="dob" placeholder="Enter date of birth" v-model="recordMember.dob">
+                    </div>
+                   <div class="form-group">
+                    <label for="gender">Gender</label>
+                       <select>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                       </select>
+                    </div>
+                   <div class="form-group">
+                    <label for="position">Position</label>
+                    <input type="text" class="form-control" id="position" placeholder="Enter position" v-model="recordMember.position">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
-               <table id="memberList" class="table table-sm table-hover">
+               <table class="table table-sm table-hover">
                   <thead>
                     <tr>
                         <th scope="col">Member ID</th>
@@ -64,12 +120,10 @@
                         <th scope="col">Active</th>
                         <th scope="col">Gender</th>
                         <th scope="col">Position</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
-                      <tr v-for="m in members">
+                      <tr v-for="m in members" @click="handleRowClick(m)">
                         <td>{{ m.memberid }}</td>
                         <td>{{ m.firstName }}</td>
                         <td>{{ m.lastName }}</td>
@@ -78,20 +132,54 @@
                           <td>{{ m.isActive }}</td>
                           <td>{{ m.gender }}</td>
                           <td>{{ m.position }}</td>
-                          <td><a href="addMember.html"><button type="submit" name="Edit">Edit</button></a> </td>
-                          <td><button type="submit" name="Delete">Delete</button> </td>
                       </tr>
                     </tbody>
                 </table>
             </div>
-            <!--<div class="bg-info col-lg-5 col-md-5 col-sm-12">
-                <h2>Empathy</h2>
-                <a target="_blank" href="img/empathy.png">
-                    <img src="img/empathy.png" title="https://www.flaticon.com/free-icon/empathy_860461" height="90px" /><br>
-                </a>
-                <cite class="citation">https://www.flaticon.com/free-icon/empathy_860461</cite>
-            </div>-->
-            <a href="addMember.html"><button type="submit" name="Add">Add New Member</button></a>
+
+          </div>
+          <div id="memberTriageApp">
+          <form @submit.prevent="handleSubmit">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="triageFirstName" placeholder="First Name" v-model="member.firstName" readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="triageLastName" placeholder="Last Name" v-model="member.lastName" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-4">
+                <input type="date" class="form-control" id="triageDob" placeholder="2001-12-13" v-model="patient.dob" readonly>
+              </div>
+              <div class="col"></div>
+              <div class="form-group col-md-2">
+                <input type="text" class="form-control" id="triageSexAtBirth" placeholder="M|F" v-model="patient.sexAtBirth" readonly>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="triageCertificate" class="col-sm-2 col-form-label">Certificate</label>
+              <div class="col-sm-10">
+                <select class="form-control" id="triageCertificate" v-model="member.cert" required>
+                  <option value="low">Cert1</option>
+                  <option value="medium">Cert2</option>
+                  <option value="high">Cert3</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Admit Patient</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
