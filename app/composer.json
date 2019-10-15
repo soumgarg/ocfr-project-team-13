@@ -1,0 +1,14 @@
+{
+    "name": "ocfr-project-team-13",
+    "description": "project",
+    "license": "private",
+    "authors": [{
+        "name": "Team 13"
+    }],
+    "require": {
+      "ramsey/uuid": "^3.8"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
