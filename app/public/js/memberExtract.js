@@ -28,6 +28,9 @@ var memberList = new Vue({
       this.members.push( this.recordMember );
       this.handleReset();
     },
+    addMemberToCertificate(){
+
+    },
     handleReset() {
       this.recordMember = {
         firstName: "",
