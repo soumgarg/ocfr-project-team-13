@@ -50,11 +50,13 @@
         </nav>
     <main class="row">
 
-    <div id="certificatelist">
+    <div id="certificateList">
       <select v-for="c in certificates">
         <option>{{ c.certName }}</option>
       </select>
     </div>
+
+
 
     <h3 class="heading">Certificates (Current)</h3>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -66,8 +68,8 @@
             <th id="theader" onclick="sortTable(1)">Gender <i class="down"></i></th>
         </tr>
     </thead>
-    <tbody id="memberList">
-        <tr v-for="m in members">
+    <tbody id="certificateList2">
+        <tr v-for="m in certificates">
             <td>{{ m.firstName }}</td>
             <td>{{ m.lastName }}</td>
             <td>{{ m.gender }}</td>
@@ -78,8 +80,8 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/certificateExtract.js"></script>
-    <script src="js/memberExtract.js"></script>
+    <script src="js/currentCertMem.js"></script>
+    <script src="js/currentCertificate.js"></script>
 
 </body>
 </html>
