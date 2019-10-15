@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 
-  <title>Gail Johnston</title>
+  <title>OCFR Project</title>
 </head>
 <body>
     <div class="container">
@@ -71,7 +71,7 @@
                   </div>
                    <div class="form-group">
                     <label for="isActive">Active</label>
-                       <select>
+                       <select v-model="recordMember.isActive">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                        </select>
@@ -82,7 +82,7 @@
                   </div>
                   <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="password" class="form-control" id="email" placeholder="Enter Email" v-model="recordMember.email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="recordMember.email">
                   </div>
                    <div class="form-group">
                     <label for="phoneNumber">Phone number</label>
@@ -94,7 +94,7 @@
                     </div>
                    <div class="form-group">
                     <label for="gender">Gender</label>
-                       <select>
+                       <select v-model="recordMember.gender">
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                        </select>
@@ -110,7 +110,6 @@
                <table class="table table-sm table-hover">
                   <thead>
                     <tr>
-                        <th scope="col">Member ID</th>
                         <th scope="col">First</th>
                         <th scope="col">Last</th>
                         <th scope="col">Radio Number</th>
@@ -122,7 +121,6 @@
                   </thead>
                   <tbody>
                       <tr v-for="m in members" @click="handleRowClick(m)">
-                        <td>{{ m.memberid }}</td>
                         <td>{{ m.firstName }}</td>
                         <td>{{ m.lastName }}</td>
                         <td>{{ m.radioNumber }}</td>
@@ -137,37 +135,49 @@
 
           </div>
           <div id="memberTriageApp">
-          <form @submit.prevent="handleSubmit">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="triageFirstName" placeholder="First Name" v-model="member.firstName" readonly>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="triageLastName" placeholder="Last Name" v-model="member.lastName" readonly>
-              </div>
-            </div>
-
+          <form @submit.prevent="handleSubmit" v-on:submit="addMemberToCertificate(member)">
             <div class="row">
               <div class="form-group col-md-4">
-                <input type="date" class="form-control" id="triageDob" placeholder="2001-12-13" v-model="patient.dob" readonly>
+                <input type="text" class="form-control" id="triageFirstName" placeholder="First Name" v-model="member.firstName">
               </div>
-              <div class="col"></div>
-              <div class="form-group col-md-2">
-                <input type="text" class="form-control" id="triageSexAtBirth" placeholder="M|F" v-model="patient.sexAtBirth" readonly>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="triageCertificate" class="col-sm-2 col-form-label">Certificate</label>
-              <div class="col-sm-10">
-                <select class="form-control" id="triageCertificate" v-model="member.cert" required>
-                  <option value="low">Cert1</option>
-                  <option value="medium">Cert2</option>
-                  <option value="high">Cert3</option>
-                </select>
+              <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="triageLastName" placeholder="Last Name" v-model="member.lastName">
               </div>
             </div>
-
+            <div class="row">
+            <div class="form-group col-md-2">
+             <input type="text" class="form-control" id="triageRadioNumber" placeholder="Radio number" v-model="member.radioNumber">
+             </div>
+            <div class="form-group col-md-2">
+             <input type="number" class="form-control" id="triageStationNumber" placeholder="Station Number" v-model="member.stationNumber">
+           </div>
+           <div class="form-group col-md-4">
+             <input type="text" class="form-control" id="triageAddress" placeholder="Address" v-model="member.address">
+           </div>
+         </div>
+         <div class="row">
+           <div class="form-group col-md-4">
+             <input type="email" class="form-control" id="triageEmail" placeholder="Email" v-model="member.email">
+           </div>
+            <div class="form-group col-md-4">
+             <input type="number" class="form-control" id="triagePhoneNumber" placeholder="Phone number" v-model="member.phoneNumber">
+           </div>
+           </div>
+           <div class="row">
+           <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="triagePosition" placeholder="Position" v-model="member.position">
+          </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="triageCertificate" class="col-sm-2 col-form-label">Certificate</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="triageCertificate" v-model="member.cert" required>
+                <option value="low">Cert1</option>
+                <option value="medium">Cert2</option>
+                <option value="high">Cert3</option>
+              </select>
+            </div>
+          </div>
 
             <div class="form-group row">
               <div class="col-sm-10">

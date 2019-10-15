@@ -1,66 +1,16 @@
-[{
-  "memberid": 1,
-  "firstName": "Ganny",
-  "lastName": "Farish",
-  "radioNumber": "A-1",
-  "stationNumber": 2,
-  "isActive": "Yes",
-  "address": "616 Birchwood Lane",
-  "email": "gfarish0@answers.com",
-  "phoneNumber": "679-479-4126",
-  "dob": "10/8/1992",
-  "gender": "Male",
-  "position": "ladderman"
-}, {
-  "memberid": 2,
-  "firstName": "Hermine",
-  "lastName": "Breckenridge",
-  "radioNumber": "A-2",
-  "stationNumber": 1,
-  "isActive": "Yes",
-  "address": "9718 Springs Place",
-  "email": "hbreckenridge1@bravesites.com",
-  "phoneNumber": "725-248-5138",
-  "dob": "9/22/1996",
-  "gender": "Female",
-  "position": "driver"
-}, {
-  "memberid": 3,
-  "firstName": "Gale",
-  "lastName": "Nyles",
-  "radioNumber": "A-3",
-  "stationNumber": 6,
-  "isActive": "Yes",
-  "address": "5 Grasskamp Road",
-  "email": "gnyles2@youtu.be",
-  "phoneNumber": "260-617-5460",
-  "dob": "11/30/1992",
-  "gender": "Female",
-  "position": "waterboy"
-}, {
-  "memberid": 4,
-  "firstName": "Samuele",
-  "lastName": "Bouzan",
-  "radioNumber": "A-4",
-  "stationNumber": 3,
-  "isActive": "Yes",
-  "address": "45821 Fisk Hill",
-  "email": "sbouzan3@google.it",
-  "phoneNumber": "297-416-0463",
-  "dob": "1/4/1974",
-  "gender": "Male",
-  "position": "Chief"
-}, {
-  "memberid": 5,
-  "firstName": "Gib",
-  "lastName": "Lardner",
-  "radioNumber": "A-5",
-  "stationNumber": 2,
-  "isActive": "No",
-  "address": "00 Laurel Plaza",
-  "email": "glardner4@ftc.gov",
-  "phoneNumber": "445-704-8323",
-  "dob": "9/15/1973",
-  "gender": "Male",
-  "position": "axeboy"
-}]
+<?php
+
+// Step 1: Get a datase connection from our help class
+$db = DbConnection::getConnection();
+
+// Step 2: Create & run the query
+$stmt = $db->prepare('SELECT * FROM Members');
+$stmt->execute();
+$patients = $stmt->fetchAll();
+
+// Step 3: Convert to JSON
+$json = json_encode($patients, JSON_PRETTY_PRINT);
+
+// Step 4: Output
+header('Content-Type: application/json');
+echo $json;
