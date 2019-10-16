@@ -7,7 +7,7 @@
 $db = DbConnection::getConnection();
 
 $stmt = $db-> prepare(
-  'SELECT m.firstName, m.lastName, m.memberid, m.gender, c.certName
+  'SELECT m.firstName, m.lastName,m.memberid, c.certName,ci.issueStartDate,ci.issueEndDate
   FROM CertIssuance ci, Certification c, Member m
   WHERE ci.certid = c.certid AND ci.memberid = m.memberid AND ci.issueEndDate > CURDATE()');
 $stmt -> execute ();

@@ -51,6 +51,15 @@
             </div>
         </nav>
         <main class="row">
+
+        <div id="certificateList">
+          <select v-for="c in certificates">
+            <option>{{ c.certName }}</option>
+          </select>
+        </div>
+
+
+
         <h3 class="heading">Certificates (All)</h3>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <table id="bookTable" class="table table-striped table-hover table-condensed table-bordered" >
@@ -58,116 +67,20 @@
             <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
                 <th id="theader" onclick="sortTable(0)">First Name <i class="down"></i></th>
                 <th id="theader" onclick="sortTable(1)">Last Name <i class="down"></i></th>
-                <th id="theader" onclick="sortTable(2)">Cert 1 <i class="down"></i></th>
-                <th id="theader" onclick="sortTable(2)">Cert 2 <i class="down"></i></th>
-                <th id="theader" onclick="sortTable(2)">Cert 3 <i class="down"></i></th>
-                <th id="theader" onclick="sortTable(2)">Cert 4 <i class="down"></i></th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Ganny</td>
-                <td>Farish</td>
-                <td>POST</td>
-                <td>Firefighterx</td>
-                <td>Firefighter y</td>
-                <td>CPRx</td>
-            </tr>
-            <tr>
-                <td>Hermine</td>
-                <td>Breckenridge</td>
-                <td>Firefighterx</td>
-                <td>CPRx</td>
-                <td>POST</td>
-                <td>CPRy</td>
-            </tr>
-            <tr>
-                <td>Gale</td>
-                <td>Nyles</td>
-                <td>Firefighterx</td>
-                <td>Firefighter y</td>
-                <td>POST</td>
-                <td>CPRx</td>
-            </tr>
-            <tr>
-                <td>Samuele</td>
-                <td>Bouzan</td>
-                <td>CPRx</td>
-                <td>CPRy</td>
-                <td>Firefighter y</td>
-                <td>POST</td>
-            </tr>
-            <tr>
-                <td>Gib</td>
-                <td>Lardner</td>
-                <td>Firefighterx</td>
-                <td>CPRx</td>
-                <td>POST</td>
-                <td>CPRy</td>
+        <tbody id="memberList">
+            <tr v-for="m in members">
+                <td>{{ m.firstName }}</td>
+                <td>{{ m.lastName }}</td>
             </tr>
         </tbody>
-    </table>
-    </div>
-
-    <h3 class="heading">Certificates (Current)</h3>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-    <table id="bookTable" class="table table-striped table-hover table-condensed table-bordered" >
-    <thead id="tableHeader">
-        <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
-            <th id="theader" onclick="sortTable(0)">First Name <i class="down"></i></th>
-            <th id="theader" onclick="sortTable(1)">Last Name <i class="down"></i></th>
-            <th id="theader" onclick="sortTable(2)">Cert 1 <i class="down"></i></th>
-            <th id="theader" onclick="sortTable(2)">Cert 2 <i class="down"></i></th>
-            <th id="theader" onclick="sortTable(2)">Cert 3 <i class="down"></i></th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Ganny</td>
-            <td>Farish</td>
-            <td>POST</td>
-            <td>Firefighterx</td>
-            <td>Firefighter y</td>
-
-        </tr>
-        <tr>
-            <td>Hermine</td>
-            <td>Breckenridge</td>
-            <td>Firefighterx</td>
-            <td>CPRx</td>
-            <td>POST</td>
-
-        </tr>
-        <tr>
-            <td>Gale</td>
-            <td>Nyles</td>
-            <td>Firefighterx</td>
-            <td>Firefighter y</td>
-            <td>POST</td>
-
-        </tr>
-        <tr>
-            <td>Samuele</td>
-            <td>Bouzan</td>
-            <td>CPRx</td>
-            <td>CPRy</td>
-            <td>Firefighter y</td>
-
-        </tr>
-        <tr>
-            <td>Gib</td>
-            <td>Lardner</td>
-            <td>Firefighterx</td>
-            <td>CPRx</td>
-            <td>POST</td>
-
-        </tr>
-    </tbody>
-    </table>
-    </div>
-
+        </table>
+        </div>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/member.js"></script>
+        <script src="js/certificateExtract.js"></script>
     </div>
 </body>
 </html>

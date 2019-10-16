@@ -1,5 +1,5 @@
 var certificateList = new Vue({
-  el: '#certificateList2',
+  el: '#certificateList',
   data: {
     certificates: [{
           firstName: "",
