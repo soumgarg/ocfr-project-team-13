@@ -65,27 +65,21 @@
         </thead>
         <tbody>
             <tr>
-                <td>Lil Jon</td>
-                <td>Firefighter II</td>
-                <td>Jun 2019</td>
+                <td>Ganny Farish</td>
+                <td>CPRx</td>
+                <td>Jun 2016</td>
 
             </tr>
             <tr>
-                <td>Lil Yachty</td>
-                <td>CPR</td>
-                <td>Apr 2018</td>
+                <td> Hermine Breckenridge</td>
+                <td>CPRy</td>
+                <td>Jul 2012</td>
 
             </tr>
             <tr>
-                <td>Lil Nas X</td>
-                <td>EMT-Adv</td>
-                <td>Feb 2019</td>
-
-            </tr>
-            <tr>
-                <td>Lil Wayne</td>
-                <td>Paramedic</td>
-                <td>Aug 2018</td>
+                <td>Gale Nyles</td>
+                <td>CPRx</td>
+                <td>Sep 2018</td>
 
             </tr>
         </tbody>
@@ -94,13 +88,40 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
     </div>
-        </main>
-    </div>
+
+      <div id="certificateList">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+           <table class="table table-sm table-hover">
+              <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Certification Name</th>
+                    <th scope="col">Issue Start Date</th>
+                    <th scope="col">Issue End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr v-for="c in certificates">
+                    <td>{{ c.firstName }}</td>
+                    <td>{{ c.lastName }}</td>
+                    <td>{{ c.certName }}</td>
+                    <td>{{ c.issueStartDate }}</td>
+                    <td>{{ c.issueEndDate }}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+
 
     <!-- Table Sort From: https://raw.githubusercontent.com/tristen/tablesort/gh-pages/tablesort.css-->
     <script src='js/tablesort.js'> </script>
     <script>
       new Tablesort(document.getElementById('expcertTable'));
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/expiredCertificate.js"></script>
+
 </body>
 </html>
