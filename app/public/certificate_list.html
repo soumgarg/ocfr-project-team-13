@@ -51,7 +51,7 @@
             <h3 class="heading">Certificate List</h3>
             <div id="certificateList">
             <div class="col-lg-6 col-md-6 col-sm-6">
-               <form method="post">
+               <form method="post" @submit.prevent="handleSubmit">
                    <div class="form-group row">
                     <label for="certAgency">Certificate Agency</label>
                     <input type="text" class="form-control" id="certAgency" placeholder="Enter the certificate agency" v-model="recordCert.certAgency">

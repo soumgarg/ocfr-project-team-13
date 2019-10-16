@@ -8,7 +8,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Certification (certAgency, certName, expirationYears)
+  'INSERT INTO Member (firstName, lastName, radioNumber, stationNumber, isActive, address, email, phoneNumber,dob,gender,position)
   VALUES (?, ?, ?)'
 );
 
