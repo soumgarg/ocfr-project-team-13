@@ -50,10 +50,14 @@
                 </ul>
             </div>
         </nav>
+
         <main class="row">
 
 
+
         <h3 class="heading">Certificates (All)</h3>
+
+
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <table id="bookTable" class="table table-striped table-hover table-condensed table-bordered" >
         <thead id="tableHeader">
@@ -75,6 +79,17 @@
             </tr>
         </tbody>
         </table>
+      </div>
+      <div class="filter">
+        <select v-model="filter.statNum">
+            <option value="">(all)</option>
+            <option>CPRx</option>
+            <option>CPRy</option>
+            <option>Firefighterx</option>
+            <option>Firefighter y</option>
+            <option>POST</option>
+        </select>
+      </div>
         </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
