@@ -38,8 +38,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
             </div>
+
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">Home</a></li>
@@ -53,17 +53,24 @@
             </div>
         </nav>
 
-        <main class="row">
-            <h3 class="heading">Expired Certifications</h3>
+      <main>
+        <h1 class="heading">Expired Certifications</h1>
+        <div id="certificateList">
+        <div class="filter">
+          <select v-model="filter.certNum">
+            <option value="">(all)</option>
+            <option>CPRx</option>
+            <option>CPRy</option>
+            <option>Firefighterx</option>
+            <option>Firefighter y</option>
+            <option>POST</option>
+          </select>
+        </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-    </div>
-
-      <div id="certificateList">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-           <table class="table table-sm table-hover">
-              <thead>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+              <table class="table table-sm table-hover">
+                <thead>
                 <tr>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
@@ -73,7 +80,8 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr v-for="c in certificates">
+                  <tr v-for="c in certificates"
+                  v-if="filter.certNum =='' || filter.certNum == c.certName">
                     <td>{{ c.firstName }}</td>
                     <td>{{ c.lastName }}</td>
                     <td>{{ c.certName }}</td>
@@ -84,13 +92,11 @@
             </table>
         </div>
       </div>
-
+    </div>
+  </main>
+</div>
 
     <!-- Table Sort From: https://raw.githubusercontent.com/tristen/tablesort/gh-pages/tablesort.css-->
-    <script src='js/tablesort.js'> </script>
-    <script>
-      new Tablesort(document.getElementById('expcertTable'));
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/expiredCertificate.js"></script>
 

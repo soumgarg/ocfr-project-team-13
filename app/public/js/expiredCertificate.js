@@ -7,7 +7,10 @@ var certificateList = new Vue({
           certName: "",
           issueStartDate: "",
           issueEndDate: ""
-    }]
+    }],
+    filter: {
+      certNum: ''
+    }
   },
   methods: {
     fetchCertificates() {
