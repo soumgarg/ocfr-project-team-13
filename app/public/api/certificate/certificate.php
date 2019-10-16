@@ -16,7 +16,7 @@
 }, {
   "certid": 104,
   "certAgency": "Ivy Technical College",
-  "certName": "Firefighter y",
+  "certName": "Firefightery",
   "expirationYears": 2
 }, {
   "certid": 105,

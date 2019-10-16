@@ -9,12 +9,12 @@ var certificateList = new Vue({
           issueEndDate: ""
     }],
     filter: {
-      certNum: ''
+      certNum: ""
     }
   },
   methods: {
     fetchCertificates() {
-      fetch('api/exptable.php')
+      fetch('api/currentcertmem/currentcertmem.php')
       .then(response => response.json())
       .then(json => {certificateList.certificates = json});
     }

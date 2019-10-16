@@ -4,7 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('SELECT * FROM Members');
+$stmt = $db->prepare('SELECT * FROM Member');
 $stmt->execute();
 $patients = $stmt->fetchAll();
 
