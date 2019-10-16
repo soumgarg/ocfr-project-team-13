@@ -52,18 +52,20 @@
     <main class="row">
 
       <h3 class="heading">Certificates (All)</h3>
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <table id="bookTable" class="table table-striped table-hover table-condensed table-bordered" >
-      <thead id="tableHeader">
+      <div id="certificateList">
+        <!--Add filter here -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
+      <table class="table table-sm table-hover" >
+      <thead>
         <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
-          <th id="theader" onclick="sortTable(0)">First Name <i class="down"></i></th>
-          <th id="theader" onclick="sortTable(1)">Last Name <i class="down"></i></th>
-          <th id="theader" onclick="sortTable(2)">Certification Name <i class="down"></i></th>
-          <th id="theader" onclick="sortTable(3)">Issue Start Date <i class="down"></i></th>
-          <th id="theader" onclick="sortTable(4)">Issue End Date <i class="down"></i></th>
+          <th id="theader">First Name</th>
+          <th id="theader">Last Name</th>
+          <th id="theader">Certification Name</th>
+          <th id="theader">Issue Start Date</th>
+          <th id="theader">Issue End Date</th>
         </tr>
     </thead>
-    <tbody id="certificateList">
+    <tbody>
         <tr v-for="c in certificates">
           <td>{{ c.firstName }}</td>
           <td>{{ c.lastName }}</td>
@@ -74,6 +76,7 @@
     </tbody>
     </table>
     </div>
+  </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
