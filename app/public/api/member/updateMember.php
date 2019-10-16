@@ -8,8 +8,8 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Member (firstName, lastName, radioNumber, stationNumber, isActive, address, email, phoneNumber,dob,gender,position)
-  VALUES (?, ?, ?,?, ?,?,?,?,?,?,?)'
+  'UPDATE Member(firstName, lastName, radioNumber, stationNumber, isActive, address, email, phoneNumber,dob,gender,position)
+  VALUES (?, ?, ?,?, ?,?,?,?,?,?,?) WHERE memberID = ? '
 );
 
 $stmt->execute([
@@ -27,5 +27,5 @@ $stmt->execute([
 ]);
 
 // Step 4: Output
-header('HTTP/1.1 200 Inserted data');
+header('HTTP/1.1 500 Inserted data');
 // YOu don't output anything!

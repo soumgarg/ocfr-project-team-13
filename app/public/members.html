@@ -72,8 +72,8 @@
                    <div class="form-group">
                     <label for="isActive">Active</label>
                        <select v-model="recordMember.isActive">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                        </select>
                   </div>
                   <div class="form-group">
@@ -95,8 +95,8 @@
                    <div class="form-group">
                     <label for="gender">Gender</label>
                        <select v-model="recordMember.gender">
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
                        </select>
                     </div>
                    <div class="form-group">
@@ -134,8 +134,8 @@
             </div>
 
           </div>
-          <div id="memberTriageApp">
-          <form @submit.prevent="handleSubmit" v-on:submit="addMemberToCertificate(member)">
+          <div id="memberApp">
+          <form @submit.prevent="handleSubmit">
             <div class="row">
               <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="triageFirstName" placeholder="First Name" v-model="member.firstName">
@@ -168,20 +168,10 @@
             <input type="text" class="form-control" id="triagePosition" placeholder="Position" v-model="member.position">
           </div>
           </div>
-          <div class="form-group col-md-6">
-            <label for="triageCertificate" class="col-sm-2 col-form-label">Certificate</label>
-            <div class="col-sm-10">
-              <select class="form-control" id="triageCertificate" v-model="member.cert" required>
-                <option value="low">Cert1</option>
-                <option value="medium">Cert2</option>
-                <option value="high">Cert3</option>
-              </select>
-            </div>
-          </div>
-
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Assign certificate to user</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary">Delete</button>
               </div>
             </div>
           </form>
