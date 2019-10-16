@@ -51,9 +51,19 @@
         </nav>
     <main class="row">
 
-      <h3 class="heading">Certificates (All)</h3>
+      <h3 class="heading">Certificates (Current)</h3>
       <div id="certificateList">
         <!--Add filter here -->
+        <div class="filter">
+                <select v-model="filter.certNum">
+                  <option value="">(all)</option>
+                  <option>CPRx</option>
+                  <option>CPRy</option>
+                  <option>Firefighterx</option>
+                  <option>Firefighter y</option>
+                  <option>POST</option>
+                </select>
+              </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
       <table class="table table-sm table-hover" >
       <thead>
@@ -66,7 +76,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr v-for="c in certificates">
+        <tr v-for="c in certificates" v-if="filter.certNum =='' || filter.certNum == c.certName">
           <td>{{ c.firstName }}</td>
           <td>{{ c.lastName }}</td>
           <td>{{ c.certName }}</td>
