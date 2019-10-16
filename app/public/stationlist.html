@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width">
   -->
 
-  <title>Expired Certification</title>
+  <title>Station List</title>
 </head>
 <body>
     <div class="container">
@@ -52,6 +52,7 @@
                 </ul>
             </div>
         </nav>
+        <h1> Station List</h1>
         <div class="filter">
                 <select v-model="filter.statNum">
                   <option value="">(all)</option>
@@ -96,10 +97,7 @@
     </div>
 
     <!-- Table Sort From: https://raw.githubusercontent.com/tristen/tablesort/gh-pages/tablesort.css-->
-    <script src='js/tablesort.js'> </script>
-    <script>
-      new Tablesort(document.getElementById('expcertTable'));
-    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    <script src="js/stationList.js"></script>
 </body>
