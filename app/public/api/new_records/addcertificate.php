@@ -11,7 +11,7 @@ $stmt = $db->prepare(
   'INSERT INTO Certification (certAgency, certName, expirationYears)
   VALUES (?, ?, ?)'
 );
-echo $_POST['certAgency'];
+
 $stmt->execute([
   $_POST['certAgency'],
   $_POST['certName'],
