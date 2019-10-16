@@ -52,13 +52,6 @@
         </nav>
         <main class="row">
 
-        <div id="certificateList">
-          <select v-for="c in certificates">
-            <option>{{ c.certName }}</option>
-          </select>
-        </div>
-
-
 
         <h3 class="heading">Certificates (All)</h3>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -67,20 +60,26 @@
             <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
                 <th id="theader" onclick="sortTable(0)">First Name <i class="down"></i></th>
                 <th id="theader" onclick="sortTable(1)">Last Name <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(2)">Certification Name <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(3)">Issue Start Date <i class="down"></i></th>
+                <th id="theader" onclick="sortTable(4)">Issue End Date <i class="down"></i></th>
             </tr>
         </thead>
-        <tbody id="memberList">
-            <tr v-for="m in members">
-                <td>{{ m.firstName }}</td>
-                <td>{{ m.lastName }}</td>
+        <tbody id="certificateList">
+            <tr v-for="c in certificates">
+              <td>{{ c.firstName }}</td>
+              <td>{{ c.lastName }}</td>
+              <td>{{ c.certName }}</td>
+              <td>{{ c.issueStartDate }}</td>
+              <td>{{ c.issueEndDate }}</td>
             </tr>
         </tbody>
         </table>
         </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="js/member.js"></script>
-        <script src="js/certificateExtract.js"></script>
+        <script src="js/allCertMem.js"></script>
+
     </div>
 </body>
 </html>
