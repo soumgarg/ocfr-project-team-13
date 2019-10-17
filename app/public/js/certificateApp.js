@@ -1,19 +1,24 @@
 var certificateApp = new Vue({
   el: '#certificateApp',
   data: {
-    cert: {}
+    certificate: {
+      certid:"",
+      certAgency: "",
+      certName: "",
+      expirationYears: ""
+    }
   },
   methods: {
     handleSubmit(event) {
       fetch('api/certificate/updateCertificate.php', {
        method:'POST',
-       body: JSON.stringify(this.cert),
+       body: JSON.stringify(this.certificate),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
      })
      .then( response => response.json() )
-     .then( json => { certificateApp.cert.push( json[0] ) })
+     .then( json => { certificateApp.certificate.push( json[0] ) })
      .catch( err => {
        console.error('RECORD POST ERROR:');
        console.error(err);
@@ -21,7 +26,7 @@ var certificateApp = new Vue({
     this.handleReset();
   },
     handleReset() {
-      this.cert = {
+      this.certificate = {
         certid:"",
         certAgency: "",
         certName: "",

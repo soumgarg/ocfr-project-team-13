@@ -37,7 +37,7 @@ var certificateList = new Vue({
       }
     },
     handleRowClick(certificate) {
-      certificateApp.cert = certificate;
+      certificateApp.certificate = certificate;
     }
  },
   created() {

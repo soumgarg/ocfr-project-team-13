@@ -91,13 +91,13 @@
           <div id="certificateApp">
           <form @submit.prevent="handleSubmit">
                 <div class="form-group row">
-                 <input type="text" class="form-control" id="triageCertAgency" placeholder="Enter the certificate agency" v-model="cert.certAgency" readonly>
+                 <input type="text" class="form-control" id="triageCertAgency" placeholder="Certificate agency" v-model="certificate.certAgency" readonly>
                </div>
                 <div class="form-group row">
-                 <input type="text" class="form-control" id="triageCertName" placeholder="Enter certificate name" v-model="cert.certName">
+                 <input type="text" class="form-control" id="triageCertName" placeholder="Certificate name" v-model="certificate.certName">
                </div>
                 <div class="form-group row">
-                 <input type="number" class="form-control" id="triageExpirationYears" placeholder="Enter number of years it expires" v-model="cert.expirationYears">
+                 <input type="number" class="form-control" id="triageExpirationYears" placeholder="Expiration years" v-model="certificate.expirationYears">
                </div>
                <div class="form-group row">
               <div class="col-sm-10">
