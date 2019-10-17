@@ -79,7 +79,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                      <tr v-for="c in certificates">
+                      <tr v-for="c in certificates" @click="handleRowClick(c)">
                         <td>{{ c.certAgency }}</td>
                         <td>{{ c.certName }}</td>
                         <td>{{ c.expirationYears }}</td>
@@ -88,9 +88,29 @@
                 </table>
             </div>
           </div>
+          <div id="certificateApp">
+          <form @submit.prevent="handleSubmit">
+                <div class="form-group row">
+                 <input type="text" class="form-control" id="triageCertAgency" placeholder="Enter the certificate agency" v-model="cert.certAgency" readonly>
+               </div>
+                <div class="form-group row">
+                 <input type="text" class="form-control" id="triageCertName" placeholder="Enter certificate name" v-model="cert.certName">
+               </div>
+                <div class="form-group row">
+                 <input type="number" class="form-control" id="triageExpirationYears" placeholder="Enter number of years it expires" v-model="cert.expirationYears">
+               </div>
+               <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <!--<button type="submit" class="btn btn-primary">Delete</button>-->
+              </div>
+            </div>
+          </form>
+        </div>
             </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/certificateExtract.js"></script>
+    <script src="js/certificateApp.js"></script>
 </body>
 </html>

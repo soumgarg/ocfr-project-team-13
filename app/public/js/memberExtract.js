@@ -7,6 +7,8 @@ var memberList = new Vue({
           lastName: "",
           radioNumber: "",
           stationNumber: "",
+          phoneNumber:"",
+          address:"",
           isActive: "",
           gender: "",
           position: ""
@@ -37,11 +39,14 @@ var memberList = new Vue({
   },
     handleReset() {
       this.recordMember = {
+        memberid:"",
         firstName: "",
         lastName: "",
         radioNumber: "",
         stationNumber: "",
+        address:"",
         isActive: "",
+        phoneNumber:"",
         gender: "",
         position: ""
       }

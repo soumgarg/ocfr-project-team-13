@@ -2,6 +2,7 @@ var certificateList = new Vue({
   el: '#certificateList',
   data: {
     certificates: [{
+          certid:"",
           certAgency: "",
           certName: "",
           expirationYears: ""
@@ -23,23 +24,21 @@ var certificateList = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { certificateList.certificates.push( json[0] ) })
-      .catch( err => {
-        console.error('RECORD POST ERROR:');
-        console.error(err);
-     });
+      .then( json => { certificateList.certificates.push( json[0] ) });
+
      this.handleReset();
    },
     handleReset() {
       this.recordCer = {
+        certid:"",
         certAgency: "",
         certName: "",
         expirationYears: ""
       }
-    }/*,
+    },
     handleRowClick(certificate) {
-      certTriageApp.certificate = certificate;
-    }*/
+      certificateApp.cert = certificate;
+    }
  },
   created() {
     this.fetchCertificates();

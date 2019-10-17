@@ -8,8 +8,8 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'UPDATE Member(firstName, lastName, radioNumber, stationNumber, isActive, address, email, phoneNumber,dob,gender,position)
-  VALUES (?, ?, ?,?, ?,?,?,?,?,?,?) WHERE memberID = ? '
+  'UPDATE Member SET firstName = ?, lastName= ?, radioNumber=?, stationNumber =?, isActive = ?, address = ?,position =?
+  WHERE memberid = ?'
 );
 
 $stmt->execute([
@@ -19,11 +19,8 @@ $stmt->execute([
   $_POST['stationNumber'],
   $_POST['isActive'],
   $_POST['address'],
-  $_POST['email'],
-  $_POST['phoneNumber'],
-  $_POST['dob'],
-  $_POST['gender'],
-  $_POST['position']
+  $_POST['position'],
+  $_POST['memberid'],
 ]);
 
 // Step 4: Output
