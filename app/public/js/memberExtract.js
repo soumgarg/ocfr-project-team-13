@@ -7,6 +7,8 @@ var memberList = new Vue({
           lastName: "",
           radioNumber: "",
           stationNumber: "",
+          phoneNumber:"",
+          address:"",
           isActive: "",
           gender: "",
           position: ""
@@ -20,30 +22,37 @@ var memberList = new Vue({
       .then(json => {memberList.members = json});
     },
     handleSubmit(event) {
-      // fetch(url, {
-      //   method: 'post',
-      //   data: this.recordPatient
-      // })
-      // .then( ... )
-      this.members.push( this.recordMember );
-      this.handleReset();
-    },
-    addMemberToCertificate(){
-
-    },
+      fetch('api/new_records/addMember.php', {
+       method:'POST',
+       body: JSON.stringify(this.recordMember),
+       headers: {
+         "Content-Type": "application/json; charset=utf-8"
+       }
+     })
+     .then( response => response.json() )
+     .then( json => { memberList.members.push( json[0] ) })
+     .catch( err => {
+       console.error('RECORD POST ERROR:');
+       console.error(err);
+    });
+    this.handleReset();
+  },
     handleReset() {
       this.recordMember = {
+        memberid:"",
         firstName: "",
         lastName: "",
         radioNumber: "",
         stationNumber: "",
+        address:"",
         isActive: "",
+        phoneNumber:"",
         gender: "",
         position: ""
       }
     },
     handleRowClick(member) {
-      memberTriageApp.member = member;
+      memberApp.member = member;
     }
   },
   created() {
