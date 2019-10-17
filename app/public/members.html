@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel=stylesheet href="css/style.css" />
+    <link rel=stylesheet href="css/page.css" />
     <!--Compiled and minified CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -106,8 +106,9 @@
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-               <table class="table table-sm table-hover">
+            <br>
+            <br>
+               <table class="table table-hover">
                   <thead>
                     <tr>
                         <th scope="col">First</th>
@@ -168,13 +169,14 @@
             <input type="text" class="form-control" id="triagePosition" placeholder="Position" v-model="member.position">
           </div>
           </div>
-          <div class="form-group col-md-6">
-            <label for="triageCertificate" class="col-sm-2 col-form-label">Certificate</label>
-            <div class="col-sm-10">
+          <div class="form-group col-sm-8">
+            <label for="triageCertificate" class="col-form-label"></label>
               <select class="form-control" id="triageCertificate" v-model="member.cert" required>
-                <option value="low">Cert1</option>
-                <option value="medium">Cert2</option>
-                <option value="high">Cert3</option>
+                <option value="low">CPRx</option>
+                <option value="medium">CPRy</option>
+                <option value="high">Firefighterx</option>
+                <option value="high">Firefightery</option>
+                <option value="high">POST</option>
               </select>
             </div>
           </div>
