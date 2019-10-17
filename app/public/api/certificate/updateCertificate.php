@@ -8,16 +8,16 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Certification (certAgency, certName, expirationYears)
-  VALUES (?, ?, ?)'
+  'UPDATE Certification SET certName= ?, expirationYears=?
+  WHERE certAgency = ?'
 );
 
 $stmt->execute([
-  $_POST['certAgency'],
-  $_POST['certName'],
-  $_POST['expirationYears']
+  $_POST['triageCertName'],
+  $_POST['triageExpirationYears'],
+  $_POST['triageCertAgency']
 ]);
 
 // Step 4: Output
-header('HTTP/1.1 200 Inserted data');
+header('HTTP/1.1 500 Inserted data');
 // YOu don't output anything!

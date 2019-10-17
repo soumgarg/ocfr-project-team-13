@@ -71,9 +71,9 @@
                   </div>
                    <div class="form-group">
                     <label for="isActive">Active</label>
-                       <select v-model="recordMember.isActive">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                       <select id="isActive" v-model="recordMember.isActive">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                        </select>
                   </div>
                   <div class="form-group">
@@ -94,9 +94,9 @@
                     </div>
                    <div class="form-group">
                     <label for="gender">Gender</label>
-                       <select v-model="recordMember.gender">
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
+                       <select id="gender" v-model="recordMember.gender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
                        </select>
                     </div>
                    <div class="form-group">
@@ -115,6 +115,7 @@
                         <th scope="col">Radio Number</th>
                         <th scope="col">Station Number</th>
                         <th scope="col">Active</th>
+                        <th scope="col">Address</th>
                         <th scope="col">Gender</th>
                         <th scope="col">Position</th>
                     </tr>
@@ -125,17 +126,18 @@
                         <td>{{ m.lastName }}</td>
                         <td>{{ m.radioNumber }}</td>
                         <td>{{ m.stationNumber }}</td>
-                          <td>{{ m.isActive }}</td>
-                          <td>{{ m.gender }}</td>
-                          <td>{{ m.position }}</td>
+                        <td>{{ m.isActive }}</td>
+                        <td>{{ m.address }}</td>
+                        <td>{{ m.gender }}</td>
+                        <td>{{ m.position }}</td>
                       </tr>
                     </tbody>
                 </table>
             </div>
 
           </div>
-          <div id="memberTriageApp">
-          <form @submit.prevent="handleSubmit" v-on:submit="addMemberToCertificate(member)">
+          <div id="memberApp">
+          <form @submit.prevent="handleSubmit">
             <div class="row">
               <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="triageFirstName" placeholder="First Name" v-model="member.firstName">
@@ -154,34 +156,36 @@
            <div class="form-group col-md-4">
              <input type="text" class="form-control" id="triageAddress" placeholder="Address" v-model="member.address">
            </div>
+           <div class="form-group">
+             <input type="email" class="form-control" id="triageEmail" placeholder="Email" v-model="member.email" readonly>
+           </div>
+            <div class="form-group">
+             <input type="number" class="form-control" id="triagePhoneNumber" placeholder="Phone number" v-model="member.phoneNumber" readonly>
+           </div>
+            <div class="form-group">
+             <input type="date" class="form-control" id="triageDob" placeholder="Date of birth" v-model="member.dob" readonly>
+             </div>
          </div>
          <div class="row">
            <div class="form-group col-md-4">
-             <input type="email" class="form-control" id="triageEmail" placeholder="Email" v-model="member.email">
-           </div>
-            <div class="form-group col-md-4">
-             <input type="number" class="form-control" id="triagePhoneNumber" placeholder="Phone number" v-model="member.phoneNumber">
-           </div>
+             <div class="form-group">
+              <label for="isActive">Active</label>
+                 <select id="triageIsActive" v-model="member.isActive">
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                 </select>
+            </div>
+          </div>
            </div>
            <div class="row">
            <div class="form-group col-md-4">
             <input type="text" class="form-control" id="triagePosition" placeholder="Position" v-model="member.position">
           </div>
           </div>
-          <div class="form-group col-md-6">
-            <label for="triageCertificate" class="col-sm-2 col-form-label">Certificate</label>
-            <div class="col-sm-10">
-              <select class="form-control" id="triageCertificate" v-model="member.cert" required>
-                <option value="low">Cert1</option>
-                <option value="medium">Cert2</option>
-                <option value="high">Cert3</option>
-              </select>
-            </div>
-          </div>
-
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Assign certificate to user</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <!--<button type="submit" class="btn btn-primary">Delete</button>-->
               </div>
             </div>
           </form>
@@ -192,5 +196,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/memberExtract.js"></script>
+    <script src="js/memberApp.js"></script>
 </body>
 </html>
