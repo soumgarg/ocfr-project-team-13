@@ -17,5 +17,5 @@ $stmt->execute([
 ]);
 
 // Step 4: Output
-header('HTTP/1.1 500 Inserted data');
+header('HTTP/1.1 200 Inserted data');
 // YOu don't output anything!
