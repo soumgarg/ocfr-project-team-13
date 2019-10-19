@@ -8,14 +8,12 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO Certification (certAgency, certName, expirationYears)
-  VALUES (?, ?, ?)'
+  'DELETE FROM Certification WHERE certName= ? AND certAgency =? '
 );
 
 $stmt->execute([
-  $_POST['certAgency'],
   $_POST['certName'],
-  $_POST['expirationYears']
+  $_POST['certAgency']
 ]);
 
 // Step 4: Output

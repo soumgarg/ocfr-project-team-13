@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel=stylesheet href="css/page.css" />
+    <link rel=stylesheet href="css/style.css" />
     <!--Compiled and minified CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -41,9 +41,9 @@
                     <li><a href="members.html">Members</a></li>
                     <li><a href="stationlist.html">Stations</a></li>
                     <li><a href="allcertificates.html">All Certificates</a></li>
-                    <li><a href="expiredcerts.html">Expired Certificates</a></li>
-                    <li><a href="currentcerts.html">Current Certificates</a></li>
-                    <li><a href="certificate_list.html">Certificate List</a></li>
+                    <li><a href="expiredcerts.html">Exp Certificates</a></li>
+                    <li><a href="currentcerts.html">Cur Certificates</a></li>
+                    <li><a href="certificate_list.html">Certificates List</a></li>
                 </ul>
             </div>
         </nav>
@@ -51,25 +51,6 @@
         <main class="row">
             <h3 class="heading">Certificate List</h3>
             <div id="certificateList">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-               <form method="post" @submit.prevent="handleSubmit">
-                   <div class="form-group row">
-                    <label for="certAgency">Certificate Agency</label>
-                    <input type="text" class="form-control" id="certAgency" placeholder="Enter the certificate agency" v-model="recordCert.certAgency">
-                  </div>
-                   <div class="form-group row">
-                    <label for="certName">Certificate Name</label>
-                    <input type="text" class="form-control" id="certName" placeholder="Enter certificate name" v-model="recordCert.certName">
-                  </div>
-                   <div class="form-group row">
-                    <label for="expirationYears">Expiry years</label>
-                    <input type="number" class="form-control" id="expirationYears" placeholder="Enter number of years it expires" v-model="recordCert.expirationYears">
-                    </div>
-                    <div class="form-group row">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                <table class="table table-sm table-hover">
                   <thead>
@@ -104,7 +85,7 @@
                  <input type="number" class="form-control" id="expirationYears" placeholder="Enter number of years it expires" v-model="certificate.expirationYears">
                  </div>
                  <div class="form-group row">
-                   <button type="submit" class="btn btn-primary">Update</button>
+                   <button type="submit" class="btn btn-primary">Delete</button>
                  </div>
              </form>
         </div>
@@ -113,6 +94,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/certificateExtract.js"></script>
-    <script src="js/certificateApp.js"></script>
+    <script src="js/certificateAppDelete.js"></script>
 </body>
 </html>
