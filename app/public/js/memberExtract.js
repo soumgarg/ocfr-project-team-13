@@ -37,6 +37,14 @@ var memberList = new Vue({
     });
     this.handleReset();
   },
+  /*csvExport(event){
+    let csvContent = "data:text/csv;charset=utf-8,";
+    const data = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", data);
+      link.setAttribute("download", "export.csv");
+      link.click();
+  };*/
     handleReset() {
       this.recordMember = {
         memberid:"",

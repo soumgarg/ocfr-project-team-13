@@ -8,12 +8,12 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM Member WHERE firstName = ? AND lastName = ? '
+  'DELETE FROM Certification WHERE certName= ? AND certAgency =? '
 );
 
 $stmt->execute([
-  $_POST['firstName'],
-  $_POST['lastName']
+  $_POST['certName'],
+  $_POST['certAgency']
 ]);
 
 // Step 4: Output
