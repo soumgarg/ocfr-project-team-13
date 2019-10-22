@@ -8,16 +8,15 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'UPDATE CertIssuance  SET issuanceid = ?, issueStartDate= ?, issueEndDate=?, memberID =?, certID=?
-  WHERE issuanceid = ?'
+  'INSERT INTO CertIssuance (issueStartDate,issueEndDate,memberid,certid)
+  VALUES (?,?,?,?)'
 );
 
 $stmt->execute([
-  $_POST['issuanceid'],
   $_POST['issueStartDate'],
   $_POST['issueEndDate'],
-  $_POST['memberID'],
-  $_POST['certID'],
+  $_POST['memberid'],
+  $_POST['certid']
 ]);
 
 // Step 4: Output
