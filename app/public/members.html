@@ -163,9 +163,6 @@
              <input type="email" class="form-control" id="triageEmail" placeholder="Email" v-model="member.email" readonly>
            </div>
             <div class="form-group">
-             <input type="number" class="form-control" id="triagePhoneNumber" placeholder="Phone number" v-model="member.phoneNumber" readonly>
-           </div>
-            <div class="form-group">
              <input type="date" class="form-control" id="triageDob" placeholder="Date of birth" v-model="member.dob" readonly>
              </div>
          </div>
@@ -185,18 +182,6 @@
             <input type="text" class="form-control" id="triagePosition" placeholder="Position" v-model="member.position">
           </div>
           </div>
-          <div class="form-group col-sm-8">
-            <label for="triageCertificate" class="col-form-label"></label>
-              <select class="form-control" id="triageCertificate" v-model="member.cert" required>
-                <option value="low">CPRx</option>
-                <option value="medium">CPRy</option>
-                <option value="high">Firefighterx</option>
-                <option value="high">Firefightery</option>
-                <option value="high">POST</option>
-              </select>
-            </div>
-          </div>
-
             <div class="form-group row">
               <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary">Update</button>

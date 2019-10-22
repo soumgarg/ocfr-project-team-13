@@ -1,9 +1,39 @@
-var certissuanceApp = new Vue({
-  el: '#certissuanceApp',
+var memberApp = new Vue({
+  el: '#memberApp',
   data: {
-    certissuance: {}
+    certificates: [{
+          certid:"",
+          certAgency: "",
+          certName: "",
+          expirationYears: ""
+    }],
+    certissuance: {
+
+    },
+    member: {
+    memberid:"",
+    firstName: "",
+    lastName: "",
+    radioNumber: "",
+    stationNumber: "",
+    address:"",
+    phoneNumber:"",
+    isActive: "",
+    gender: "",
+    position: "",
+    certid:"",
+    memberid:"",
+    issuanceid:"",
+    issueStartDate:"",
+    issueEndDate:""
+  }
   },
   methods: {
+    fetchCertificates() {
+      fetch('api/certificate/index.php')
+      .then(response => response.json())
+      .then(json => {memberApp.certificates = json});
+    },
     handleSubmit(event) {
       fetch('api/updateCertissuance.php', {
        method:'POST',
@@ -13,7 +43,7 @@ var certissuanceApp = new Vue({
        }
      })
      .then( response => response.json() )
-     .then( json => { certissuanceApp.certissuance.push( json[0] ) })
+     .then( json => { memberApp.certissuance.push( json[0] ) })
      .catch( err => {
        console.error('RECORD POST ERROR:');
        console.error(err);
@@ -47,6 +77,7 @@ var certissuanceApp = new Vue({
     }
   },
   created() {
+    this.fetchCertificates();
     this.handleReset();
   }
 })
