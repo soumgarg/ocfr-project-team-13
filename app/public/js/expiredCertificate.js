@@ -10,7 +10,12 @@ var certificateList = new Vue({
     }],
     filter: {
       certNum: ''
+    },
+    computed: {
+    certificate_name: function() {
+      return [...new Set(this.certificates.map(i => i.certName))]
     }
+  }
   },
   methods: {
     fetchCertificates() {
