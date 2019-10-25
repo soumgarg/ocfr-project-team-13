@@ -21,7 +21,7 @@ var certificateList = new Vue({
       .then(json => {certificateList.certificates = json});
     },
     handleSubmit(event) {
-     fetch('api/new_records/addCertificate.php', {
+     fetch('api/certificate/addCertificate.php', {
         method:'POST',
         body: JSON.stringify(this.recordCert),
         headers: {
