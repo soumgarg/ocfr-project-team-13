@@ -22,7 +22,7 @@ var memberList = new Vue({
       .then(json => {memberList.members = json});
     },
     handleSubmit(event) {
-      fetch('api/new_records/addMember.php', {
+      fetch('api/new_records/addmember.php', {
        method:'POST',
        body: JSON.stringify(this.recordMember),
        headers: {
