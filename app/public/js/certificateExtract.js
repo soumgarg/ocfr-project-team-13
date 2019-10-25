@@ -7,7 +7,12 @@ var certificateList = new Vue({
           certName: "",
           expirationYears: ""
     }],
-    recordCert: {}
+    recordCert: {
+      certid:"",
+      certAgency: "",
+      certName: "",
+      expirationYears: ""
+    }
   },
   methods: {
     fetchCertificates() {
@@ -24,7 +29,11 @@ var certificateList = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { certificateList.certificates.push( json[0] ) });
+      .then( json => { certificateList.certificates.push( json[0] ) })
+      .catch( err => {
+        console.error('RECORD POST ERROR:');
+        console.error(err);
+     });
 
      this.handleReset();
    },
@@ -42,5 +51,6 @@ var certificateList = new Vue({
  },
   created() {
     this.fetchCertificates();
+    this.handleReset();
   }
 })
