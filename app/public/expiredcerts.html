@@ -59,11 +59,11 @@
         <div class="filter">
           <select v-model="filter.certNum">
             <option value="">(all)</option>
-            <option>CPRx</option>
-            <option>CPRy</option>
+            <option v-for="c in allCertificates">{{c.certName}}</option>
+            <!-- <option>CPRy</option>
             <option>Firefighterx</option>
             <option>Firefighter y</option>
-            <option>POST</option>
+            <option>POST</option> -->
           </select>
         </div>
               <table class="table table-hover">

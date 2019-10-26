@@ -8,11 +8,28 @@ var stationList = new Vue({
           lastName: "",
           email: ""
     }],
+    members: [{
+          memberid: "" ,
+          firstName: "",
+          lastName: "",
+          radioNumber: "",
+          stationNumber: "",
+          phoneNumber:"",
+          address:"",
+          isActive: "",
+          gender: "",
+          position: ""
+    }],
     filter: {
       statNum: ''
     }
   },
   methods: {
+      fetchMembers() {
+        fetch('api/member/index.php')
+        .then(response => response.json())
+        .then(json => {stationList.members = json});
+      },
     fetchStations() {
       fetch('api/station.php')
       .then(response => response.json())
@@ -21,5 +38,6 @@ var stationList = new Vue({
  },
   created() {
     this.fetchStations();
+    this.fetchMembers();
   }
 });
