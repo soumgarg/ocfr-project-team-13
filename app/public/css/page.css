@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html{
+body{
     background-color: darkslategrey;
 }
 
@@ -28,7 +28,6 @@ html{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: center;
-  background-color: #f1f1f1;
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
@@ -50,32 +49,8 @@ th, td {
 }
 
 footer {
-	background-color: #FFFFFF;
+	background-color: white;
 	padding-bottom: 35px;
-}
-.footer_column {
-	width: 50%;
-	text-align: center;
-	padding-top: 30px;
-	float: left;
-}
-footer .footer_column h3 {
-	color: #B3B3B3;
-	text-align: center;
-}
-footer .footer_column p {
-	color: #717070;
-	background-color: #FFFFFF;
-}
-
-
-}
-footer .footer_column p {
-	padding-left: 30px;
-	padding-right: 30px;
-	text-align: justify;
-	line-height: 25px;
-	font-weight: lighter;
-	margin-left: 20px;
-	margin-right: 20px;
+  padding-top: 35px;
+  border:
 }
