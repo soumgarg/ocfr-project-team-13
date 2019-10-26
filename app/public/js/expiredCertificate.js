@@ -8,11 +8,21 @@ var certificateList = new Vue({
           issueStartDate: "",
           issueEndDate: ""
     }],
+    allCertificates: [{
+          certName: "",
+          issueStartDate: "",
+          issueEndDate: ""
+    }],
     filter: {
       certNum: ''
     }
   },
   methods: {
+    fetchAllCertificates() {
+      fetch('api/certificate/index.php')
+      .then(response => response.json())
+      .then(json => {certificateList.allCertificates = json});
+    },
     fetchCertificates() {
       fetch('api/exptable.php')
       .then(response => response.json())
@@ -21,5 +31,6 @@ var certificateList = new Vue({
  },
   created() {
     this.fetchCertificates();
+    this.fetchAllCertificates();
   }
 })

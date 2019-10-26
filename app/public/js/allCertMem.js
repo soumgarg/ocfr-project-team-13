@@ -8,11 +8,28 @@ var certificateList = new Vue({
           issueStartDate: "",
           issueEndDate: ""
     }],
+    members: [{
+          memberid: "" ,
+          firstName: "",
+          lastName: "",
+          radioNumber: "",
+          stationNumber: "",
+          phoneNumber:"",
+          address:"",
+          isActive: "",
+          gender: "",
+          position: ""
+    }],
     filter: {
       certNum: ""
     }
   },
   methods: {
+    fetchMembers() {
+      fetch('api/member/index.php')
+      .then(response => response.json())
+      .then(json => {certificateList.members = json});
+    },
     fetchCertificates() {
       fetch('api/allcerts.php')
       .then(response => response.json())
@@ -21,5 +38,6 @@ var certificateList = new Vue({
  },
   created() {
     this.fetchCertificates();
+    this.fetchMembers();
   }
 })
