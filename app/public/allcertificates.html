@@ -57,11 +57,11 @@
         <div class="filter">
                 <select v-model="filter.certNum">
                   <option value="">(all)</option>
-                  <option>Farish</option>
-                  <option>Breckenridge</option>
+                  <option v-for="m in members">{{m.lastName}}</option>
+                  <!-- <option>Breckenridge</option>
                   <option>Nyles</option>
                   <option>Bouzan</option>
-                  <option>Lardner</option>
+                  <option>Lardner</option> -->
                 </select>
               </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
