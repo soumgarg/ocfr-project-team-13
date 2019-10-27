@@ -5,7 +5,7 @@ var certificateApp = new Vue({
   },
   methods: {
     handleSubmit(event) {
-      fetch('api/certificate/deleteCertificate.php', {
+      fetch('api/certificate/deletecertificate.php', {
        method:'POST',
        body: JSON.stringify(this.certificate),
        headers: {
