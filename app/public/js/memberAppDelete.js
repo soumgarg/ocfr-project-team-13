@@ -5,7 +5,7 @@ var memberApp = new Vue({
   },
   methods: {
     handleSubmit(event) {
-      fetch('api/member/deleteMember.php', {
+      fetch('api/member/deletemember.php', {
        method:'POST',
        body: JSON.stringify(this.member),
        headers: {
