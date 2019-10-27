@@ -55,19 +55,18 @@
     </nav>
     <main class="row">
 
-      <h3 class="heading">Certificates (Current)</h3>
+      <h1 class="heading">Certificates (Current)</h3>
       <div id="certificateList">
-        <!--Add filter here -->
-        <div class="filter">
-                <select v-model="filter.certNum">
-                  <option value=""></option>
-                  <option>CPRx</option>
-                  <option>CPRy</option>
-                  <option>Firefighterx</option>
-                  <option>Firefighter y</option>
-                  <option>POST</option>
-                </select>
-              </div>
+      <div class="filter">
+        <select v-model="filter.certNum">
+          <option value="">(all)</option>
+          <option v-for="c in allCertificates">{{c.certName}}</option>
+          <!-- <option>CPRy</option>
+          <option>Firefighterx</option>
+          <option>Firefighter y</option>
+          <option>POST</option> -->
+        </select>
+      </div>
       <table class="table table-hover" >
       <thead>
         <tr> <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
