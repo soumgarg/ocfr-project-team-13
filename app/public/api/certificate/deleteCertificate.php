@@ -8,10 +8,18 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE FROM Certification WHERE certName= ? AND certAgency =? '
+  'DELETE FROM CertIssuance WHERE certid = ? '
 );
 
 $stmt->execute([
+  $_POST['certid']
+]);
+
+$stmt1 = $db->prepare(
+  'DELETE FROM Certification WHERE certName= ? AND certAgency =? '
+);
+
+$stmt1->execute([
   $_POST['certName'],
   $_POST['certAgency']
 ]);
